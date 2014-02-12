@@ -25,11 +25,9 @@ Clone this repository.  Follow github's instructions up there.
 
 ## Configuration ##
 
-You will need to edit two files named `rupert.rb`.  Sorry.  
+Edit `lib/cinch/plugins/rupert.rb` and replace `YOURKEYHERE` with the your [Buffer App access token](https://bufferapp.com/developers/apps).  (Please keep the double-quote marks).
 
-First edit `lib/cinch/plugins/rupert.rb` and replace `YOURKEYHERE` with the your [Buffer App access token](https://bufferapp.com/developers/apps).  (Please keep the double-quote marks).
-
-Now edit `rupert.rb` in the top-level directory. and optionally replace:
+The top-level directory `rupert.rb` contains the IRC connection information. The following things can be replaced:
  * `127.0.0.1` with your irc server--if you change it, I hope it's on a secure vpn at least.
  * `#bufferapp` with the name of your irc channel.
  * `rupert` (`c.nick: rupert`) with whatever else you want to name the bot.
