@@ -15,7 +15,7 @@ Since this is all in [ruby](http://ruby.org), I recommend using ruby and gems an
 
 ## Pre-Installation ##
 
-The best way to run this bot is on a small, lightweight irc server listening only on localhost.  You can try [ngircd](http://ngircd.barton.de): lightweight and really easy to install, configure & run.  Connnect to that server with an irc client ([pidgin](http://pidgin.im/), [hexchat](http://hexchat.github.io) and [irssi](http://irssi.org) are popular choices) and create a channel that you will use to interact with Rupert.  For example:
+The best way to run this bot is on a small, lightweight irc server listening only on localhost.  You can try [ngircd](http://ngircd.barton.de): lightweight and really easy to install, configure & run.  Connnect to that server with an irc client ([pidgin](http://pidgin.im/), [hexchat](http://hexchat.github.io), [quassel](http://quassel-irc.org) and [irssi](http://irssi.org) are popular choices) and create a channel that you will use to interact with Rupert.  For example:
 
     /join #bufferapp
 
