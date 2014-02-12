@@ -17,7 +17,7 @@ Since this is all in [ruby](http://ruby.org), I recommend using ruby and gems an
 
 The best way to run this bot is on a small, lightweight irc server listening only on localhost.  You can try [ngircd](http://ngircd.barton.de): lightweight and really easy to install, configure & run.  Connnect to that server with an irc client ([pidgin](http://pidgin.im/), [hexchat](http://hexchat.github.io) and [irssi](http://irssi.org) are popular choices) and create a channel that you will use to interact with Rupert.  For example:
 
-    /join #dashboard
+    /join #bufferapp
 
 ## Installation ##
 
@@ -29,10 +29,10 @@ You will need to edit two files named `rupert.rb`.  Sorry.
 
 First edit `lib/cinch/plugins/rupert.rb` and replace `YOURKEYHERE` with the your [Buffer App access token](https://bufferapp.com/developers/apps).  (Please keep the single quote marks).
 
-Now edit `rupert.rb` in the top-level directory. and replace:
- * Replace `IRCSERVER` with your irc server--I hope it is `127.0.0.1` or `localhost`.  (Please keep the double-quote marks).
- * Optionally, replace `#socialmedia` with the name of your irc channel.
- * Optionally, replace `rupert` (`c.nick: rupert`) with whatever else you want to name the bot.
+Now edit `rupert.rb` in the top-level directory. and optionally replace:
+ * `127.0.0.1` with your irc server--if you change it, I hope it's on a secure vpn at least.
+ * `#bufferapp` with the name of your irc channel.
+ * `rupert` (`c.nick: rupert`) with whatever else you want to name the bot.
 
 ## Running It ##
 
