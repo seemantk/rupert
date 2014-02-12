@@ -27,7 +27,7 @@ Clone this repository.  Follow github's instructions up there.
 
 You will need to edit two files named `rupert.rb`.  Sorry.  
 
-First edit `lib/cinch/plugins/rupert.rb` and replace `YOURKEYHERE` with the your [Buffer App access token](https://bufferapp.com/developers/apps).  (Please keep the single quote marks).
+First edit `lib/cinch/plugins/rupert.rb` and replace `YOURKEYHERE` with the your [Buffer App access token](https://bufferapp.com/developers/apps).  (Please keep the double-quote marks).
 
 Now edit `rupert.rb` in the top-level directory. and optionally replace:
  * `127.0.0.1` with your irc server--if you change it, I hope it's on a secure vpn at least.
