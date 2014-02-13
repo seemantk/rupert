@@ -19,6 +19,10 @@ module Cinch::Plugins
 
 		match /profiles/, method: :profiles
 		def profiles(m)
+			m.channel.topic	= get_profiles.join(" || ")
+        end
+
+        def get_profiles()
 			replies = []
 			@mic.profiles.each do |profile|
 				reply = []
@@ -46,7 +50,7 @@ module Cinch::Plugins
 
 				replies << reply
 			end
-			m.channel.topic	= replies.map { |r| "#{r.join('. ')}" }.join(" || ")
+			replies.map { |r| "#{r.join('. ')}" }
 		end
 
 		match /publish (.*)/, method: :publish
@@ -75,15 +79,13 @@ module Cinch::Plugins
 
 			cap = 100 * response.buffer_count / response.buffer_percentage
 
-			profiles(m)
-
-            m.channel.topic = "#{m.channel.topic} || #{ 
+            m.channel.topic = [
+                    get_profiles.join(" || "),
                     [
-					    "#{response.buffer_count} messages in queue",
-					    "Using #{response.buffer_percentage}% of buffer",
-					    "#{cap - response.buffer_count} messages remain."
+					    "Buffer Queue: #{response.buffer_count}/#{cap} messages (#{response.buffer_percentage}%)",
+					    "#{cap - response.buffer_count} messages left"
 				    ].join("; ")
-            }"
+                ].join(" || ")
 		end
 	end
 end
