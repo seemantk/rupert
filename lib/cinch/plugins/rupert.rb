@@ -75,13 +75,16 @@ module Cinch::Plugins
 
 			cap = 100 * response.buffer_count / response.buffer_percentage
 
-			m.reply [
-					"#{response.buffer_count}	messages in queue",
-					"Using #{response.buffer_percentage}% of buffer",
-					"#{cap - response.buffer_count} messages remain."
-				].join(". ")
-
 			profiles(m)
+
+            m.channel.topic = "#{m.channel.topic} || #{ 
+                    [
+					    "#{response.buffer_count} messages in queue",
+					    "Using #{response.buffer_percentage}% of buffer",
+					    "#{cap - response.buffer_count} messages remain."
+				    ].join("; ")
+                ].join(". ")
+            }"
 		end
 	end
 end
