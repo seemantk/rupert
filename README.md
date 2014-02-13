@@ -2,8 +2,8 @@ rupert
 ======
 
 A [cinch bot](https://github.com/cinchrb/cinch) plugin to interface with [BufferApp's API](https://bufferapp.com/developers/api/). At the moment, the only two commands it obeys are:
- * **!profiles** lists all the profiles you have connected to your [BufferApp](https://bufferapp.com) account.
- * **!post <msg>** adds <msg> to your [BufferApp](https://bufferapp.com) queue
+ * **!profiles** changes the channel topic to list all the profiles connected to your [BufferApp](https://bufferapp.com) account and some statistics.
+ * **!post <msg>** adds <msg> to your [BufferApp](https://bufferapp.com) queue.  The topic then will automatically refresh with updated account stats & info.
 
 ## Requirements ##
 
