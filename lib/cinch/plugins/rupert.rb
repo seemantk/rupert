@@ -26,11 +26,9 @@ module Cinch::Plugins
 			replies = []
 			@mic.profiles.each do |profile|
 				reply = []
-				reply << "#{profile.service.upcase}/#{profile.formatted_username}"
+				reply << "#{profile.service}/#{profile.formatted_username}"
 				unless profile.statistics.empty?
-					stats = profile.statistics.map { |k,v|
-							{k => v} if v > 0
-						}.compact.reduce :merge
+                    stats = profile.statistics.reject { |k, v| v == 0 }
 					
 					# Each network has different nouns
 					# ("followers", "likes", "impressions", etc.).
