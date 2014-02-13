@@ -32,7 +32,7 @@ module Cinch::Plugins
 					# ("followers", "likes", "impressions", etc.).
 					# Why does Google+ attach "_28" to the field names?
 					unless stats.nil?
-						reply << "Social: " + stats.map { |k, v|
+						reply << stats.map { |k, v|
 							"#{v} #{k.gsub(/_\d+/, ' ').strip.capitalize}"
 						}.join(", ")
 					end
@@ -40,13 +40,13 @@ module Cinch::Plugins
 
 				# Create a messages summary of sent, drafts, pending messages
 				# Only bother mentioning the ones that are nonzero
-				reply << "Messages: " + profile.counts.map { |k,v|
+				reply << "Updates: " + profile.counts.map { |k,v|
 						"#{v} #{k}" if v != 0
 					}.compact.join(", ")
 
 				replies << reply
 			end
-				m.channel.topic	= "#{replies.map { |r| "#{r.join('. ')}" }.join(" || ")}"
+			m.channel.topic	= replies.map { |r| "#{r.join('. ')}" }.join(" || ")
 		end
 
 		match /publish (.*)/, method: :publish
@@ -83,7 +83,6 @@ module Cinch::Plugins
 					    "Using #{response.buffer_percentage}% of buffer",
 					    "#{cap - response.buffer_count} messages remain."
 				    ].join("; ")
-                ].join(". ")
             }"
 		end
 	end
